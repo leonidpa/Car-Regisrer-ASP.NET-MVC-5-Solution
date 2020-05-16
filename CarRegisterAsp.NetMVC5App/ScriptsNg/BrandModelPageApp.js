@@ -6,7 +6,8 @@ var app = angular.module(pageApplicationName, ngArr);
 app.config(function ($locationProvider) {
     $locationProvider.html5Mode({
         enabled: true,
-        requireBase: false});
+        requireBase: false
+    });
 });
 
 
@@ -29,7 +30,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
         if ($scope.inputBrand == '') return;
         var selectedBrand = GetSelectedBrandName();
         if ($scope.inputBrand == selectedBrand) return;
-        $http.get('/Home/AddBrand?brandName=' + $scope.inputBrand)
+        $http.post('/api/brands/add/' + $scope.inputBrand)
             .then(function (response) {
                 if (response.status == 200) GetAllBrands();
             }, function (error) {
@@ -40,7 +41,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
     }
 
     $scope.deleteBrand = function () {
-        $http.get('/Home/DeleteBrand?brandId=' + GetSelectedBrandId())
+        $http.delete('/api/brands/delete/' + GetSelectedBrandId())
             .then(function (response) {
                 if (response.status == 200) GetAllBrands();
             }, function (error) {
@@ -54,7 +55,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
         if ($scope.inputModel == '') return;
         var selectedModel = GetSelectedModelName();
         if ($scope.inputModel == selectedModel) return;
-        $http.get('/Home/AddModel?brandId=' + $scope.selectedBrandId + '&modelName=' + $scope.inputModel)
+        $http.post('/api/models/add/' + $scope.selectedBrandId + '/' + $scope.inputModel)
             .then(function (response) {
                 if (response.status == 200) GetAllModels();
             }, function (error) {
@@ -65,11 +66,11 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
     }
 
     $scope.deleteModel = function () {
-        $http.get('/Home/DeleteModel?modelId=' + GetSelectedModelId())
+        $http.delete('/api/models/delete/' + GetSelectedModelId())
             .then(function (response) {
                 if (response.status == 200) GetAllModels();
             }, function (error) {
-                    $scope.message = 'Unexpected Error while deleting Models data!';
+                $scope.message = 'Unexpected Error while deleting Models data!';
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
@@ -93,7 +94,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
             $scope.selectedBrandId = found.Id;
             GetAllModels();
         }
-        
+
     };
 
     $scope.selectModelChanged = function () {
@@ -115,7 +116,8 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
     };
 
     function GetAllBrands() {
-        $http.get('/Home/GetAllBrandsData')
+        $scope.isViewLoading = true;
+        $http.get('/api/brands')
             .then(function (response) {
                 $scope.BrandsList = response.data;
             }, function (error) {
@@ -123,10 +125,12 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
+        $scope.isViewLoading = false;
     }
 
     function GetAllModels() {
-        $http.get('/Home/GetAllModelsData/?brandId=' + $scope.selectedBrandId)
+        $scope.isViewLoading = true;
+        $http.get('/api/models/' + ($scope.selectedBrandId == null ? '0' : $scope.selectedBrandId))
             .then(function (response) {
                 $scope.ModelsList = response.data;
                 if ($scope.ModelsList != null) {
@@ -134,12 +138,13 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
                 } else {
                     $scope.inputModelDisabled = true;
                 }
-                    
+
             }, function (error) {
                 $scope.message = 'Unexpected Error while loading Models data!';
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
+        $scope.isViewLoading = false;
     }
 
     function GetSelectedBrandName() {
@@ -162,4 +167,3 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
         return sl.value;
     }
 });
-    

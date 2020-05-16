@@ -29,12 +29,12 @@
                     <input class="inline" style="width: 114pt;" type="text" ng-model="inputBrand" ng-change="setBrandSelect()" name="bname" placeholder="" />
                     <div class="inline">
                         <a ng-click="addBrand()">
-                            <img style="" src="~/Content/images/add.png" />
+                            <img title="Add brand" src="~/Content/images/add.png" />
                         </a>
                     </div>
                     <div class="inline" ng-show="brandDeleteVisble">
                         <a ng-click="deleteBrand()">
-                            <img style="margin-bottom: 2pt;" src="~/Content/images/erase.png" />
+                            <img title="Delete brand" style="margin-bottom: 2pt;" src="~/Content/images/erase.png" />
                         </a>
                     </div>
 
@@ -49,17 +49,17 @@
                     <input class="inline" style="width: 114pt;" type="text" ng-model="inputModel" ng-change="setModelSelect()" ng-disabled="inputModelDisabled" name="mname" placeholder="" />
                     <div class="inline" ng-show="!inputModelDisabled">
                         <a ng-click="addModel()">
-                            <img class="inline" style="" src="~/Content/images/add.png" />
+                            <img class="inline" title="Add model" src="~/Content/images/add.png" />
                         </a>
                     </div>
                     <div class="inline" ng-show="modelDeleteVisible">
                         <a ng-click="deleteModel()">
-                            <img style="margin-bottom: 2pt;" src="~/Content/images/erase.png" />
+                            <img title="Delete model" style="margin-bottom: 2pt;" src="~/Content/images/erase.png" />
                         </a>
                     </div>
 
                 </div>
-                <select ng-model="selectedModelId" ng-change="selectModelChanged()" id="modelsSelectList" class="brand-select-list" size="25">
+                <select ng-model="selectedModelId" ng-change="selectModelChanged()" ng-disabled="inputModelDisabled" id="modelsSelectList" class="brand-select-list" size="25">
                     <option ng-repeat="model in ModelsList" value="{{model.Id}}">{{model.Name}}</option>
                 </select>
             </div>

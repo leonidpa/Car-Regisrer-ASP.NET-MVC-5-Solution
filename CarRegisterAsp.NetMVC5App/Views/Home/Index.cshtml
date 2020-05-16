@@ -2,30 +2,135 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+@section css{
+    <link href="~/Content/ng.css" rel="stylesheet" />
+    <link href="~/Content/index.page.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/ScriptsNg/IndexPadeApp.js"></script>
+}
+
+<div ng-app="indexPageApp">
+    <h2>Car register page</h2>
+    <div id="carsContent" ng-controller="IndexController">
+        <span ng-show="isViewLoading" class="viewLoading">
+            <img src="~/Content/images/ng-loader.gif" /> loading...
+        </span>
+        <div ng-class="result">{{message}}</div>
+        <hr />
+        <div>
+            <table ng-show="true" class="table table-bordered">
+                <tr>
+                    <td style="width: 7vw;">
+                        <span>First name:</span>
+                        <input class="" style="width: 100%;" type="text" ng-model="firstNameInput" ng-change="" ng-required="true" name="fnname" placeholder="" />
+                    </td>
+                    <td style="width: 7vw;">
+                        <span>Last name:</span>
+                        <input class="" style="width: 100%;" type="text" ng-model="lastNameInput" ng-change="" ng-required="true" name="lnname" placeholder="" />
+                    </td>
+                    <td style="width: 7vw;">
+                        <span>Patronimic:</span>
+                        <input class="" style="width: 100%;" type="text" ng-model="patronymicInput" ng-change="" ng-required="true" name="pname" placeholder="" />
+                    </td>
+                    <td style="width: 7vw;">
+                        <span>Phone number:</span>
+                        <input class="" style="width: 100%;" type="text" ng-model="phoneNumberInput" ng-change="" ng-required="true" name="pnname" placeholder="" />
+                    </td>
+                    <td style="width: 7vw;">
+                        <span>Car number:</span>
+                        <input class="" style="width: 100%;" type="text" ng-model="carNumberInput" ng-change="" ng-required="true" name="cnname" placeholder="" />
+                    </td>
+                    <td>
+                        <span>Car brand:</span>
+                        <select ng-model="carBrandSelect" ng-change="OnCarBrandSelectChange()" id="brandsSelectList" class="brand-select-list" style="width: 100%;">
+                            <option ng-repeat="brand in carBrandsList" value="{{brand.Id}}">{{brand.Name}}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <span>Car model:</span>
+                        <select ng-model="carModelSelect" ng-change="" id="modelsSelectList" class="model-select-list" style="width: 100%;">
+                            <option ng-repeat="brand in carModelsList" value="{{brand.Id}}">{{brand.Name}}</option>
+                        </select>
+                    </td>
+                    <td style="text-align: center; padding-top: 15pt; width: 7vw;">
+                        <a ng-click="RegisterCar()">
+                            <img title="Register car" src="~/Content/images/add.png" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <hr />
+            <table ng-show="true" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 7vw;">
+                            <span>First name</span>
+                        </th>
+                        <th style="width: 7vw;">
+                            <span>Last name</span>
+                        </th>
+                        <th style="width: 7vw;">
+                            <span>Patronimic</span>
+                        </th>
+                        <th style="width: 7vw;">
+                            <span>Phone number</span>
+                        </th>
+                        <th style="width: 7vw;">
+                            <span>Car number</span>
+                        </th>
+                        <th>
+                            <span>Car brand</span>
+                        </th>
+                        <th>
+                            <span>Car model</span>
+                        </th>
+                        <th style="width: 7vw;">
+                            <span>Actions</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="car in carsList">
+                        <td>
+                            <span>{{car.FirstName}}</span>
+                        </td>
+                        <td>
+                            <span>{{car.LastName}}</span>
+                        </td>
+                        <td>
+                            <span>{{car.Patronymic}}</span>
+                        </td>
+                        <td>
+                            <span>{{car.PhoneNamber}}</span>
+                        </td>
+                        <td>
+                            <span>{{car.CarNumber}}</span>
+                        </td>
+                        <td>
+                            <span>{{car.CarBrand}}</span>
+                        </td>
+                        <td>
+                            <span>{{car.CarModel}}</span>
+                        </td>
+                        <td style="text-align: center; width: 7vw;">
+                            <a ng-click="">
+                                <img title="Edit" src="~/Content/images/edit.png" />
+                            </a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a ng-click="">
+                                <img title="Delete" src="~/Content/images/erase.png" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+
+
+
