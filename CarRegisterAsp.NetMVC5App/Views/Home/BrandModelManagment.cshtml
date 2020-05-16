@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "BrandModelManagment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <link href="~/Content/ng.css" rel="stylesheet" />
+    <link href="~/Content/brand-model.page.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/ScriptsNg/BrandModelPageApp.js"></script>
+}
+
+<div ng-app="brandModelPageApp">
+    <h2>Brand&Model managment page</h2>
+
+    <div id="brandsContent" ng-controller="BrandModelController">
+        <span ng-show="isViewLoading" class="viewLoading">
+            <img src="~/Content/images/ng-loader.gif" /> loading...
+        </span>
+        <div ng-class="result">{{message}}</div>
+        <hr />
+        <div>
+            <div class="inline" style="margin-right: 100pt;">
+                <div>
+                    <h3 class="inline">Brands:</h3>
+                    <input class="inline" style="width: 114pt;" type="text" ng-model="inputBrand" ng-change="setBrandSelect()" name="bname" placeholder="" />
+                    <div class="inline">
+                        <a ng-click="addBrand()">
+                            <img style="" src="~/Content/images/add.png" />
+                        </a>
+                    </div>
+                    <div class="inline" ng-show="brandDeleteVisble">
+                        <a ng-click="deleteBrand()">
+                            <img style="margin-bottom: 2pt;" src="~/Content/images/erase.png" />
+                        </a>
+                    </div>
+
+                </div>
+                <select ng-model="selectedBrandId" ng-change="selectBrandChanged()" id="brandsSelectList" class="brand-select-list" size="25">
+                    <option ng-repeat="brand in BrandsList" value="{{brand.Id}}">{{brand.Name}}</option>
+                </select>
+            </div>
+            <div class="inline absolute">
+                <div>
+                    <h3 class="inline">Models:</h3>
+                    <input class="inline" style="width: 114pt;" type="text" ng-model="inputModel" ng-change="setModelSelect()" ng-disabled="inputModelDisabled" name="mname" placeholder="" />
+                    <div class="inline" ng-show="!inputModelDisabled">
+                        <a ng-click="addModel()">
+                            <img class="inline" style="" src="~/Content/images/add.png" />
+                        </a>
+                    </div>
+                    <div class="inline" ng-show="modelDeleteVisible">
+                        <a ng-click="deleteModel()">
+                            <img style="margin-bottom: 2pt;" src="~/Content/images/erase.png" />
+                        </a>
+                    </div>
+
+                </div>
+                <select ng-model="selectedModelId" ng-change="selectModelChanged()" id="modelsSelectList" class="brand-select-list" size="25">
+                    <option ng-repeat="model in ModelsList" value="{{model.Id}}">{{model.Name}}</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

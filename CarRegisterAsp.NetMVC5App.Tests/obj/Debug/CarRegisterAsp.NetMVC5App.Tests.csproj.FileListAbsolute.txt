@@ -1,0 +1,2 @@
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET Core MVC Solution\CarRegisterAsp.NetMVC5App.Tests\obj\Debug\CarRegisterAsp.NetMVC5App.Tests.csprojAssemblyReference.cache
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET Core MVC Solution\CarRegisterAsp.NetMVC5App.Tests\obj\Debug\CarRegisterAsp.NetMVC5App.Tests.csproj.CoreCompileInputs.cache
