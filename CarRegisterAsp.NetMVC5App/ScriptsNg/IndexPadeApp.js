@@ -50,10 +50,27 @@ app.controller('IndexController', function ($scope, $http, $location, $window) {
             ||
             $scope.carModelSelect == ''
             ||
+            $scope.firstNameInput == undefined
+            ||
+            $scope.lastNameInput == undefined
+            ||
+            $scope.patronymicInput == undefined
+            ||
+            $scope.phoneNumberInput == undefined
+            ||
+            $scope.carNumberInput == undefined
+            ||
+            $scope.carBrandSelect == undefined
+            ||
+            $scope.carModelSelect == undefined
+            ||
             $scope.carBrandSelect == null
             ||
             $scope.carModelSelect == null
-            ) return;
+        ) {
+            alert('Not all data is entered');
+            return;
+        } 
         var carModel = {
             FirstName: $scope.firstNameInput,
             LastName: $scope.lastNameInput,
@@ -159,7 +176,24 @@ app.controller('IndexController', function ($scope, $http, $location, $window) {
             document.getElementById("carBrandEditSelect-" + carId).value == ''
             ||
             document.getElementById("carModelEditSelect-" + carId).value == ''
-        ) return;
+            ||
+            document.getElementById("carBrandEditFirstNameInput-" + carId).value == undefined
+            ||
+            document.getElementById("carBrandEditLastNameInput-" + carId).value == undefined
+            ||
+            document.getElementById("carBrandEditPatronimicInput-" + carId).value == undefined
+            ||
+            document.getElementById("carBrandEditPhoneNumberInput-" + carId).value == undefined
+            ||
+            document.getElementById("carBrandEditCarNumberInput-" + carId).value == undefined
+            ||
+            document.getElementById("carBrandEditSelect-" + carId).value == undefined
+            ||
+            document.getElementById("carModelEditSelect-" + carId).value == undefined
+        ) {
+            alert('Not all data is entered');
+            return;
+        } 
         var carModel = {
             CarId: carId,
             FirstName: document.getElementById("carBrandEditFirstNameInput-" + carId).value,
