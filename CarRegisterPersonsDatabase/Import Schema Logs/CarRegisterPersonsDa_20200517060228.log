@@ -1,0 +1,84 @@
+17.05.2020 21:02:28	This log contains information about the import schema operation into project 'CarRegisterPersonsDatabase' on computer 'DESKTOP-UF7VQET' by user 'leoni'.
+17.05.2020 21:02:28	Import of database schema has started.
+17.05.2020 21:02:34	Gathering database credentials
+17.05.2020 21:02:34	Gathering database options
+17.05.2020 21:02:34	Gathering users
+17.05.2020 21:02:34	Gathering roles
+17.05.2020 21:02:34	Gathering application roles
+17.05.2020 21:02:34	Gathering role memberships
+17.05.2020 21:02:34	Gathering filegroups
+17.05.2020 21:02:34	Gathering full-text catalogs
+17.05.2020 21:02:34	Gathering assemblies
+17.05.2020 21:02:34	Gathering certificates
+17.05.2020 21:02:34	Gathering asymmetric keys
+17.05.2020 21:02:34	Gathering symmetric keys
+17.05.2020 21:02:34	Gathering encrypted symmetric keys
+17.05.2020 21:02:34	Gathering schemas
+17.05.2020 21:02:34	Gathering XML schema collections
+17.05.2020 21:02:34	Gathering user-defined data types
+17.05.2020 21:02:34	Gathering user-defined types
+17.05.2020 21:02:34	Gathering table types
+17.05.2020 21:02:34	Gathering unique keys for table types
+17.05.2020 21:02:34	Gathering primary keys for table types
+17.05.2020 21:02:34	Gathering indexes for table types
+17.05.2020 21:02:34	Gathering check constraints for table types
+17.05.2020 21:02:34	Gathering default constraints for table types
+17.05.2020 21:02:34	Gathering partition functions
+17.05.2020 21:02:34	Gathering partition schemes
+17.05.2020 21:02:34	Gathering functions
+17.05.2020 21:02:34	Gathering encrypted functions
+17.05.2020 21:02:34	Gathering aggregates
+17.05.2020 21:02:34	Gathering procedures
+17.05.2020 21:02:34	Gathering encrypted procedures
+17.05.2020 21:02:34	Gathering tables
+17.05.2020 21:02:34	Gathering primary keys
+17.05.2020 21:02:34	Gathering unique constraints
+17.05.2020 21:02:34	Gathering foreign keys
+17.05.2020 21:02:34	Gathering default constraints
+17.05.2020 21:02:34	Gathering check constraints
+17.05.2020 21:02:34	Gathering views
+17.05.2020 21:02:34	Gathering encrypted views
+17.05.2020 21:02:34	Gathering indexes
+17.05.2020 21:02:34	Gathering statistics
+17.05.2020 21:02:34	Gathering full-text index stoplists
+17.05.2020 21:02:34	Gathering search property lists
+17.05.2020 21:02:34	Gathering search properties
+17.05.2020 21:02:34	Gathering full-text indexes
+17.05.2020 21:02:34	Gathering column store indexes
+17.05.2020 21:02:34	Gathering spatial indexes
+17.05.2020 21:02:34	Gathering XML indexes
+17.05.2020 21:02:34	Gathering Selective XML indexes
+17.05.2020 21:02:34	Gathering encrypted triggers
+17.05.2020 21:02:34	Gathering triggers
+17.05.2020 21:02:34	Gathering encrypted and clr ddl triggers
+17.05.2020 21:02:34	Gathering ddl triggers
+17.05.2020 21:02:34	Gathering synonyms
+17.05.2020 21:02:34	Gathering defaults
+17.05.2020 21:02:34	Gathering data constraint uddt bindings
+17.05.2020 21:02:34	Gathering rules
+17.05.2020 21:02:34	Gathering data constraint uddt bindings
+17.05.2020 21:02:34	Gathering message types
+17.05.2020 21:02:34	Gathering queues
+17.05.2020 21:02:34	Gathering contracts
+17.05.2020 21:02:34	Gathering services
+17.05.2020 21:02:35	Gathering event notifications
+17.05.2020 21:02:35	Gathering remote service bindings
+17.05.2020 21:02:35	Gathering broker priorities
+17.05.2020 21:02:35	Gathering signatures
+17.05.2020 21:02:35	Gathering data compression options
+17.05.2020 21:02:35	Gathering sequence types
+17.05.2020 21:02:35	Gathering security policies
+17.05.2020 21:02:35	Gather column encryption keys
+17.05.2020 21:02:35	Gathering column master keys
+17.05.2020 21:02:35	Gathering external data sources
+17.05.2020 21:02:35	Gathering external file formats
+17.05.2020 21:02:35	Gathering external tables
+17.05.2020 21:02:35	Gathering extended properties
+17.05.2020 21:02:35	Gathering credentials
+17.05.2020 21:02:35	Gathering logins
+17.05.2020 21:02:35	Gathering server audits
+17.05.2020 21:02:35	Scanning project for duplicate elements
+17.05.2020 21:02:35	Finished duplicate element processing
+17.05.2020 21:02:36	Finished importing database.
+17.05.2020 21:02:36	A summary of the import was saved to the following location: E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\Import Schema Logs\CarRegisterPersonsDa_20200517060228.log
+17.05.2020 21:02:36	Click Finish to continue...

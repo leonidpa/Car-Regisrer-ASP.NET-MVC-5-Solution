@@ -10,6 +10,7 @@ using System.Web.Http;
 using AddCarModel = CarRegisterAsp.NetMVC5App.Models.AddCarModel;
 using CarRegisterRepositoryLibrary.Models.CarModels.CarBrandModels;
 using CarRegisterRepositoryLibrary.Models.CarModels.CarModelModels;
+using CarRegisterAsp.NetMVC5App.Models;
 
 namespace CarRegisterAsp.NetMVC5App.Controllers.WebAPI
 {
@@ -49,9 +50,35 @@ namespace CarRegisterAsp.NetMVC5App.Controllers.WebAPI
             }
         }
 
-        public string Get(int id)
+        [Route("car/{carId}")]
+        public IHttpActionResult Get(long carId)
         {
-            return "value";
+            try
+            {
+                var car = storageCarRegister.Cars.GetCar(carId);
+                var profile = storageCarRegister.Persons.GetProfile((long)car.OwnerProfileId);
+
+                var carRecord =
+                    new
+                    {
+                        FirstName = profile.FirstName,
+                        LastName = profile.LastName,
+                        Patronymic = profile.Patronymic,
+                        PhoneNumber = profile.PhoneNumber,
+                        Number = car.Number,
+                        Brand = car.Brand,
+                        Model = car.Model
+                    };
+                return Ok(carRecord);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    Success = false,
+                    Message = ex.Message
+                });
+            }
         }
 
         [Route("add")]
@@ -81,17 +108,49 @@ namespace CarRegisterAsp.NetMVC5App.Controllers.WebAPI
             }
             catch (Exception ex)
             {
-                //throw new HttpException(404, e.Message);
                 return Json(new { Success = false, Message = ex.Message });
             }
         }
 
-        public void Put(int id, [FromBody]string value)
+        [Route("update")]
+        public IHttpActionResult Put([FromBody]UpdateCarRecordModel model)
         {
+            var carProfileId = storageCarRegister.Persons.AddProfile(
+                    new AddProfileModel
+                    {
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        Patronymic = model.Patronymic,
+                        PhoneNumber = model.PhoneNamber
+                    }
+                    );
+
+            var updateCarModel = new UpdateCarModel
+            {
+                CarBrandId = model.CarBrandId,
+                CarModelId = model.CarModelId,
+                CarNumber = model.CarNumber,
+                Id = model.CarId,
+                OwnerProfileId = carProfileId
+            };
+            storageCarRegister.Cars.UpdateCar(updateCarModel);
+
+            return Ok();
         }
 
-        public void Delete(int id)
+        [Route("delete/{carId}")]
+        public IHttpActionResult Delete(long carId)
         {
+            try
+            { 
+                storageCarRegister.Cars.DeleteCar(carId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Success = false, Message = ex.Message
+                });
+            }
         }
     }
 }

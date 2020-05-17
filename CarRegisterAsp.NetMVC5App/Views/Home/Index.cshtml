@@ -24,34 +24,34 @@
                 <tr>
                     <td style="width: 7vw;">
                         <span>First name:</span>
-                        <input class="" style="width: 100%;" type="text" ng-model="firstNameInput" ng-change="" ng-required="true" name="fnname" placeholder="" />
+                        <input class="" style="width: 100%;" type="text" ng-model="firstNameInput" ng-disabled="inputCarModelDisabled" ng-change="" ng-required="true" name="fnname" placeholder="" />
                     </td>
                     <td style="width: 7vw;">
                         <span>Last name:</span>
-                        <input class="" style="width: 100%;" type="text" ng-model="lastNameInput" ng-change="" ng-required="true" name="lnname" placeholder="" />
+                        <input class="" style="width: 100%;" type="text" ng-model="lastNameInput" ng-disabled="inputCarModelDisabled" ng-change="" ng-required="true" name="lnname" placeholder="" />
                     </td>
                     <td style="width: 7vw;">
                         <span>Patronimic:</span>
-                        <input class="" style="width: 100%;" type="text" ng-model="patronymicInput" ng-change="" ng-required="true" name="pname" placeholder="" />
+                        <input class="" style="width: 100%;" type="text" ng-model="patronymicInput" ng-disabled="inputCarModelDisabled" ng-change="" ng-required="true" name="pname" placeholder="" />
                     </td>
                     <td style="width: 7vw;">
                         <span>Phone number:</span>
-                        <input class="" style="width: 100%;" type="text" ng-model="phoneNumberInput" ng-change="" ng-required="true" name="pnname" placeholder="" />
+                        <input class="" style="width: 100%;" type="text" ng-model="phoneNumberInput" ng-disabled="inputCarModelDisabled" ng-change="" ng-required="true" name="pnname" placeholder="" />
                     </td>
                     <td style="width: 7vw;">
                         <span>Car number:</span>
-                        <input class="" style="width: 100%;" type="text" ng-model="carNumberInput" ng-change="" ng-required="true" name="cnname" placeholder="" />
+                        <input class="" style="width: 100%;" type="text" ng-model="carNumberInput" ng-disabled="inputCarModelDisabled" ng-change="" ng-required="true" name="cnname" placeholder="" />
                     </td>
                     <td>
                         <span>Car brand:</span>
-                        <select ng-model="carBrandSelect" ng-change="OnCarBrandSelectChange()" id="brandsSelectList" class="brand-select-list" style="width: 100%;">
+                        <select ng-model="carBrandSelect" ng-change="OnCarBrandSelectChange(carBrandSelect)" ng-disabled="inputCarModelDisabled" id="brandsSelectList" class="brand-select-list" style="width: 100%;">
                             <option ng-repeat="brand in carBrandsList" value="{{brand.Id}}">{{brand.Name}}</option>
                         </select>
                     </td>
                     <td>
                         <span>Car model:</span>
-                        <select ng-model="carModelSelect" ng-change="" id="modelsSelectList" class="model-select-list" style="width: 100%;">
-                            <option ng-repeat="brand in carModelsList" value="{{brand.Id}}">{{brand.Name}}</option>
+                        <select ng-model="carModelSelect" ng-change="" ng-disabled="inputCarModelDisabled" id="modelsSelectList" class="model-select-list" style="width: 100%;">
+                            <option ng-repeat="model in carModelsList" value="{{model.Id}}">{{model.Name}}</option>
                         </select>
                     </td>
                     <td style="text-align: center; padding-top: 15pt; width: 7vw;">
@@ -62,7 +62,7 @@
                 </tr>
             </table>
             <hr />
-            <table ng-show="true" class="table table-bordered">
+            <table id="cars-content-tabele" ng-show="true" class="table table-bordered">
                 <thead>
                     <tr>
                         <th style="width: 7vw;">
@@ -92,34 +92,46 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="car in carsList">
+                    <tr id="cars-content-tabele-row-carid-{{car.CarId}}" ng-repeat="car in carsList">
                         <td>
-                            <span>{{car.FirstName}}</span>
+                            <span ng-hide="EditCarId == car.CarId">{{car.FirstName}}</span>
+                            <input ng-show="EditCarId == car.CarId" id="carBrandEditFirstNameInput-{{car.CarId}}" class="" style="width: 100%;" type="text" ng-required="true" name="fnename" placeholder="" />
                         </td>
                         <td>
-                            <span>{{car.LastName}}</span>
+                            <span ng-hide="EditCarId == car.CarId">{{car.LastName}}</span>
+                            <input ng-show="EditCarId == car.CarId" id="carBrandEditLastNameInput-{{car.CarId}}" class="" style="width: 100%;" type="text" ng-required="true" name="lnename" placeholder="" />
                         </td>
                         <td>
-                            <span>{{car.Patronymic}}</span>
+                            <span ng-hide="EditCarId == car.CarId">{{car.Patronymic}}</span>
+                            <input ng-show="EditCarId == car.CarId" id="carBrandEditPatronimicInput-{{car.CarId}}" class="" style="width: 100%;" type="text" ng-required="true" name="pname" placeholder="" />
                         </td>
                         <td>
-                            <span>{{car.PhoneNamber}}</span>
+                            <span ng-hide="EditCarId == car.CarId">{{car.PhoneNamber}}</span>
+                            <input ng-show="EditCarId == car.CarId" id="carBrandEditPhoneNumberInput-{{car.CarId}}" class="" style="width: 100%;" type="text" ng-required="true" name="pnname" placeholder="" />
                         </td>
                         <td>
-                            <span>{{car.CarNumber}}</span>
+                            <span ng-hide="EditCarId == car.CarId">{{car.CarNumber}}</span>
+                            <input ng-show="EditCarId == car.CarId" id="carBrandEditCarNumberInput-{{car.CarId}}" class="" style="width: 100%;" type="text" ng-required="true" name="cnname" placeholder="" />
                         </td>
                         <td>
-                            <span>{{car.CarBrand}}</span>
+                            <span ng-hide="EditCarId == car.CarId">{{car.CarBrand}}</span>
+                            <select ng-show="EditCarId == car.CarId" id="carBrandEditSelect-{{car.CarId}}" style="width: 100%;">
+                            </select>
                         </td>
                         <td>
-                            <span>{{car.CarModel}}</span>
+                            <span ng-hide="EditCarId == car.CarId">{{car.CarModel}}</span>
+                            <select ng-show="EditCarId == car.CarId" id="carModelEditSelect-{{car.CarId}}" style="width: 100%;">
+                            </select>
                         </td>
                         <td style="text-align: center; width: 7vw;">
-                            <a ng-click="">
+                            <a ng-hide="EditCarId == car.CarId" ng-click="OnEditCarInit(car.CarId)">
                                 <img title="Edit" src="~/Content/images/edit.png" />
                             </a>
+                            <a ng-show="EditCarId == car.CarId" ng-click="OnSaveCarEdit(car.CarId)">
+                                <img title="Save" src="~/Content/images/save.png" />
+                            </a>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a ng-click="">
+                            <a ng-click="OnDeleteCar(car.CarId)">
                                 <img title="Delete" src="~/Content/images/erase.png" />
                             </a>
                         </td>

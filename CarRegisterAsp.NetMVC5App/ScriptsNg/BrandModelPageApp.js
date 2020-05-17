@@ -34,7 +34,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
             .then(function (response) {
                 if (response.status == 200) GetAllBrands();
             }, function (error) {
-                $scope.message = 'Unexpected Error while adding Brands data!';
+                $scope.message = 'Unexpected Error when adding Brands data!';
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
@@ -45,7 +45,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
             .then(function (response) {
                 if (response.status == 200) GetAllBrands();
             }, function (error) {
-                $scope.message = 'Unexpected Error while deleting Brands data!';
+                $scope.message = 'Unexpected Error when deleting Brands data!';
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
@@ -59,7 +59,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
             .then(function (response) {
                 if (response.status == 200) GetAllModels();
             }, function (error) {
-                $scope.message = 'Unexpected Error while adding Models data!';
+                $scope.message = 'Unexpected Error when adding Models data!';
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
@@ -70,7 +70,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
             .then(function (response) {
                 if (response.status == 200) GetAllModels();
             }, function (error) {
-                $scope.message = 'Unexpected Error while deleting Models data!';
+                $scope.message = 'Unexpected Error when deleting Models data!';
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
@@ -121,7 +121,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
             .then(function (response) {
                 $scope.BrandsList = response.data;
             }, function (error) {
-                $scope.message = 'Unexpected Error while loading Brands data!';
+                $scope.message = 'Unexpected Error when loading Brands data!';
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
@@ -140,7 +140,7 @@ app.controller('BrandModelController', function ($scope, $http, $location, $wind
                 }
 
             }, function (error) {
-                $scope.message = 'Unexpected Error while loading Models data!';
+                $scope.message = 'Unexpected Error when loading Models data!';
                 $scope.result = "color-red";
                 console.log($scope.message);
             });

@@ -50,5 +50,15 @@ namespace CarRegisterAsp.NetMVC5App.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void BrandModelManagment()
+        {
+            HomeController controller = new HomeController();
+
+            ViewResult result = controller.BrandModelManagment() as ViewResult;
+
+            Assert.IsNotNull(result);
+        }
     }
 }
