@@ -81,7 +81,7 @@ app.controller('IndexController', function ($scope, $http, $location, $window) {
             CarModelId: $scope.carModelSelect
         };
 
-        $http.post('/api/cars/add', carModel)
+        $http.put('/api/cars/add', carModel)
             .then(function (response) {
                 if (response.status == 200) GetAllCars();;
             }, function (error) {
@@ -89,6 +89,14 @@ app.controller('IndexController', function ($scope, $http, $location, $window) {
                 $scope.result = "color-red";
                 console.log($scope.message);
             });
+
+        $scope.firstNameInput = '';
+        $scope.lastNameInput = '';
+        $scope.patronymicInput = '';
+        $scope.phoneNumberInput = '';
+        $scope.carNumberInput = '';
+        $scope.carBrandSelect = '';
+        $scope.carModelSelect = '';
     }
 
     $scope.OnEditCarInit = function (carId) {
@@ -205,7 +213,7 @@ app.controller('IndexController', function ($scope, $http, $location, $window) {
             CarModelId: document.getElementById("carModelEditSelect-" + carId).value
         };
 
-        $http.put('/api/cars/update', carModel)
+        $http.post('/api/cars/update', carModel)
             .then(function (response) {
                 if (response.status == 200) GetAllCars();;
             }, function (error) {

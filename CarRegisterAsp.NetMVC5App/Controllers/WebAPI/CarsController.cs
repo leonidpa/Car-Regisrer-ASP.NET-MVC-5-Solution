@@ -81,39 +81,8 @@ namespace CarRegisterAsp.NetMVC5App.Controllers.WebAPI
             }
         }
 
-        [Route("add")]
-        public IHttpActionResult Post([FromBody]AddCarModel model)
-        {
-            try
-            {
-                var carProfileId = storageCarRegister.Persons.AddProfile(
-                    new AddProfileModel {
-                        FirstName = model.FirstName,
-                        LastName = model.LastName,
-                        Patronymic = model.Patronymic,
-                        PhoneNumber = model.PhoneNamber
-                    }
-                    );
-
-                storageCarRegister.Cars.AddCar(
-                    new CarRegisterRepositoryLibrary.Models.CarModels.AddCarModel
-                    {
-                        CarBrandId = model.CarBrandId,
-                        CarModelId = model.CarModelId,
-                        CarNumber = model.CarNumber,
-                        OwnerProfileId = carProfileId
-                    }
-                    );
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return Json(new { Success = false, Message = ex.Message });
-            }
-        }
-
         [Route("update")]
-        public IHttpActionResult Put([FromBody]UpdateCarRecordModel model)
+        public IHttpActionResult Post([FromBody] UpdateCarRecordModel model)
         {
             var carProfileId = storageCarRegister.Persons.AddProfile(
                     new AddProfileModel
@@ -136,6 +105,38 @@ namespace CarRegisterAsp.NetMVC5App.Controllers.WebAPI
             storageCarRegister.Cars.UpdateCar(updateCarModel);
 
             return Ok();
+        }
+
+        [Route("add")]
+        public IHttpActionResult Put([FromBody]AddCarModel model)
+        {
+            try
+            {
+                var carProfileId = storageCarRegister.Persons.AddProfile(
+                    new AddProfileModel
+                    {
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        Patronymic = model.Patronymic,
+                        PhoneNumber = model.PhoneNamber
+                    }
+                    );
+
+                storageCarRegister.Cars.AddCar(
+                    new CarRegisterRepositoryLibrary.Models.CarModels.AddCarModel
+                    {
+                        CarBrandId = model.CarBrandId,
+                        CarModelId = model.CarModelId,
+                        CarNumber = model.CarNumber,
+                        OwnerProfileId = carProfileId
+                    }
+                    );
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Success = false, Message = ex.Message });
+            }
         }
 
         [Route("delete/{carId}")]
