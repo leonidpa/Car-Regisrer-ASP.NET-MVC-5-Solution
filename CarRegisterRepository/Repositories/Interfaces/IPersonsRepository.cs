@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarRegisterRepositoryLibrary.Repositories.Interfaces
 {
-    internal interface IPersonsRepository
+    public interface IPersonsRepository
     {
         long AddProfile(AddProfileModel model);
         DisplayProfileModel GetProfile(long profileId);

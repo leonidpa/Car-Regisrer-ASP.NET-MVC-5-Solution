@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRegisterRepositoryLibrary.Repositories.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,7 @@ namespace CarRegisterRepositoryLibrary.Repositories
             return instance;
         }
 
-        public PersonsRepository Persons
+        public IPersonsRepository Persons
         {
             get
             {
@@ -37,7 +38,7 @@ namespace CarRegisterRepositoryLibrary.Repositories
             }
         }
 
-        public CarsRepository Cars
+        public ICarsRepository Cars
         {
             get
             {

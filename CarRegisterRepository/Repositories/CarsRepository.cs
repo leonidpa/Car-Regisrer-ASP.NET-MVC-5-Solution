@@ -1,4 +1,5 @@
-﻿using CarRegisterRepositoryLibrary.Contexts;
+﻿using CarRegisterRepositoryLibrary.Repositories.Interfaces;
+using CarRegisterRepositoryLibrary.Contexts;
 using CarRegisterRepositoryLibrary.Models.CarModels;
 using CarRegisterRepositoryLibrary.Models.CarModels.CarBrandModels;
 using CarRegisterRepositoryLibrary.Models.CarModels.CarModelModels;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CarRegisterRepositoryLibrary.Repositories
 {
-    public class CarsRepository
+    public class CarsRepository : ICarsRepository
     {
         public void AddCarBrand(AddCarBrandModel model)
         {
