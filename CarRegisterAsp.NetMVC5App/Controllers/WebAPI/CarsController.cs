@@ -11,18 +11,26 @@ using AddCarModel = CarRegisterAsp.NetMVC5App.Models.AddCarModel;
 using CarRegisterRepositoryLibrary.Models.CarModels.CarBrandModels;
 using CarRegisterRepositoryLibrary.Models.CarModels.CarModelModels;
 using CarRegisterAsp.NetMVC5App.Models;
+using System.Threading.Tasks;
 
 namespace CarRegisterAsp.NetMVC5App.Controllers.WebAPI
 {
     [RoutePrefix("api/cars")]
     public class CarsController : CarRegisterApiController
     {
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> GetAsync()
         {
             try
             {
-                var personsList = storageCarRegister.Persons.GetProfiles();
-                var carsList = storageCarRegister.Cars.GetCars();
+                var personsGetTask = new Task<List<DisplayProfileModel>>(() => { return storageCarRegister.Persons.GetProfiles(); });
+                personsGetTask.Start();
+                var carsGetTask = new Task<List<DisplayCarModel>>(() => { return storageCarRegister.Cars.GetCars(); });
+                carsGetTask.Start();
+
+                await Task.WhenAll(personsGetTask, carsGetTask);
+
+                var personsList = personsGetTask.Result;
+                var carsList = carsGetTask.Result;
 
                 var result = from person in personsList
                              join car in carsList
