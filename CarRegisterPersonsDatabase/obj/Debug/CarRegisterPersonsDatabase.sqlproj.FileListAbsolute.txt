@@ -1,0 +1,9 @@
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\bin\Debug\CarRegisterPersonsDatabase.dacpac
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\bin\Debug\CarRegisterPersonsDatabase.dll
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\bin\Debug\CarRegisterPersonsDatabase.pdb
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\obj\Debug\Model.xml
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\obj\Debug\refactor.xml
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\obj\Debug\postdeploy.sql
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\obj\Debug\predeploy.sql
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\obj\Debug\CarRegisterPersonsDatabase.dll
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterPersonsDatabase\obj\Debug\CarRegisterPersonsDatabase.pdb

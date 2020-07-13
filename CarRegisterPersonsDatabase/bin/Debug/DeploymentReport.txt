@@ -1,0 +1,38 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[__MigrationHistory] (Table)
+       [dbo].[DisplayProfileModels] (Table)
+       [dbo].[FirstName] (Table)
+       [dbo].[FirstName].[U_Id] (Index)
+       [dbo].[LastName] (Table)
+       [dbo].[LastName].[U_Id] (Index)
+       [dbo].[Patronymic] (Table)
+       [dbo].[Patronymic].[U_Id] (Index)
+       [dbo].[PhoneNumber] (Table)
+       [dbo].[PhoneNumber].[U_Id] (Index)
+       [dbo].[Profile] (Table)
+       [dbo].[FK_Profile_FirstNameId] (Foreign Key)
+       [dbo].[FK_Profile_LastNameId] (Foreign Key)
+       [dbo].[FK_Profile_PatronymicId] (Foreign Key)
+       [dbo].[FK_Profile_PhoneNumberId] (Foreign Key)
+       [dbo].[AddFirstName] (Procedure)
+       [dbo].[AddLastName] (Procedure)
+       [dbo].[AddPatronymic] (Procedure)
+       [dbo].[AddPhoneNumber] (Procedure)
+       [dbo].[AddProfile] (Procedure)
+       [dbo].[DeleteProfile] (Procedure)
+       [dbo].[GetProfile] (Procedure)
+       [dbo].[GetProfiles] (Procedure)
+       [dbo].[UpdateProfile] (Procedure)
+
+** Supporting actions

@@ -1,4 +1,5 @@
-﻿using CarRegisterRepositoryLibrary.Repositories.Interfaces;
+﻿using CarRegisterRepositoryLibrary.Services;
+using CarRegisterRepositoryLibrary.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarRegisterRepositoryLibrary.Repositories
 {
-    public class CarRegisterRepository
+    public sealed class CarRegisterRepository
     {
         private static CarRegisterRepository instance;
 
@@ -17,8 +18,8 @@ namespace CarRegisterRepositoryLibrary.Repositories
 
         private CarRegisterRepository()
         {
-            personsRepository = new PersonsRepository();
-            carsRepository = new CarsRepository();
+            personsRepository = RepositoryService.Get<PersonsRepository>();
+            carsRepository = RepositoryService.Get<CarsRepository>();
         }
 
         public static CarRegisterRepository GetInstance()

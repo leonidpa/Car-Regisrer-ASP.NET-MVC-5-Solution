@@ -1,0 +1,12 @@
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\bin\Debug\CarRegisterRepository.dll.config
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\bin\Debug\CarRegisterRepository.dll
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\bin\Debug\CarRegisterRepository.pdb
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\bin\Debug\EntityFramework.dll
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\bin\Debug\EntityFramework.SqlServer.dll
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\bin\Debug\EntityFramework.xml
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\bin\Debug\EntityFramework.SqlServer.xml
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\obj\Debug\CarRegisterRepositoryLibrary.csprojAssemblyReference.cache
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\obj\Debug\CarRegisterRepositoryLibrary.csproj.CoreCompileInputs.cache
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\obj\Debug\CarRegisterRepositoryLibrary.csproj.CopyComplete
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\obj\Debug\CarRegisterRepository.dll
+E:\[ROOT]\[Documents]\[Projects]\Car Register Solution\Car Regisrer ASP.NET MVC 5 Solution\CarRegisterRepository\obj\Debug\CarRegisterRepository.pdb

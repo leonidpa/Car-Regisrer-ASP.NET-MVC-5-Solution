@@ -1,0 +1,47 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[__MigrationHistory] (Table)
+       [dbo].[Car] (Table)
+       [dbo].[CarBrand] (Table)
+       [dbo].[CarBrand].[U_Id] (Index)
+       [dbo].[CarBrandModel] (Table)
+       [dbo].[CarModel] (Table)
+       [dbo].[CarModel].[U_Id] (Index)
+       [dbo].[CarNumber] (Table)
+       [dbo].[CarNumber].[U_Id] (Index)
+       [dbo].[DisplayCarBrandModels] (Table)
+       [dbo].[DisplayCarModelModels] (Table)
+       [dbo].[DisplayCarModels] (Table)
+       [dbo].[DF_CarBrand_Visibility] (Default Constraint)
+       [dbo].[DF_CarModel_Visibility] (Default Constraint)
+       [dbo].[FK_Car_CarBrandId] (Foreign Key)
+       [dbo].[FK_Car_CarModelId] (Foreign Key)
+       [dbo].[FK_Car_CarNumberId] (Foreign Key)
+       [dbo].[FK_CarBrandModel_BrandId] (Foreign Key)
+       [dbo].[FK_CarBrandModel_ModelId] (Foreign Key)
+       [dbo].[AddCarBrand] (Procedure)
+       [dbo].[AddCarModel] (Procedure)
+       [dbo].[AddCarNumber] (Procedure)
+       [dbo].[DeleteCar] (Procedure)
+       [dbo].[DeleteCarBrand] (Procedure)
+       [dbo].[DeleteCarModel] (Procedure)
+       [dbo].[GetCar] (Procedure)
+       [dbo].[GetCarBrandModels] (Procedure)
+       [dbo].[GetCarBrands] (Procedure)
+       [dbo].[GetCars] (Procedure)
+       [dbo].[UnvisibleCarBrand] (Procedure)
+       [dbo].[UnvisibleCarModel] (Procedure)
+       [dbo].[UpdateCar] (Procedure)
+       [dbo].[AddCar] (Procedure)
+
+** Supporting actions

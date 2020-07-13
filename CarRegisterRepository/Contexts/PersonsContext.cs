@@ -1,5 +1,6 @@
-﻿using CarRegisterRepositoryLibrary.Constants;
+﻿using CarRegisterRepositoryLibrary.Services;
 using CarRegisterRepositoryLibrary.Models.PersonModels;
+using CarRegisterRepositoryLibrary.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,7 +13,7 @@ namespace CarRegisterRepositoryLibrary.Contexts
     public class PersonsContext : DbContext
     {
         public PersonsContext()
-        : base(CarRegisterConstants.PERSONSCONNECTIONSTRING)
+        : base(RepositoryService.ConnectionString<PersonsRepository>())
         { }
 
         public virtual DbSet<DisplayProfileModel> GetProfile { get; set; }

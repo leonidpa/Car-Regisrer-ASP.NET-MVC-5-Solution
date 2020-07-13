@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\CarRegisterConstants.cs" />
     <Compile Include="Contexts\CarsContext.cs" />
     <Compile Include="Contexts\PersonsContext.cs" />
     <Compile Include="Models\CarModels\AddCarModel.cs" />
@@ -77,6 +76,7 @@
     <Compile Include="Repositories\Interfaces\ICarsRepository.cs" />
     <Compile Include="Repositories\Interfaces\IPersonsRepository.cs" />
     <Compile Include="Repositories\PersonsRepository.cs" />
+    <Compile Include="Services\RepositoryService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

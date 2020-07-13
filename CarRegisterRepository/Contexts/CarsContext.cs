@@ -1,7 +1,8 @@
-﻿using CarRegisterRepositoryLibrary.Constants;
+﻿using CarRegisterRepositoryLibrary.Services;
 using CarRegisterRepositoryLibrary.Models.CarModels;
 using CarRegisterRepositoryLibrary.Models.CarModels.CarBrandModels;
 using CarRegisterRepositoryLibrary.Models.CarModels.CarModelModels;
+using CarRegisterRepositoryLibrary.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,7 +15,7 @@ namespace CarRegisterRepositoryLibrary.Contexts
     public class CarsContext : DbContext
     {
         public CarsContext()
-        : base(CarRegisterConstants.CARSCONNECTIONSTRING)
+        : base(RepositoryService.ConnectionString<CarsRepository>())
         { }
 
         public virtual DbSet<DisplayCarBrandModel> GetCarBrand { get; set; }
